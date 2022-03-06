@@ -1,38 +1,146 @@
+*{
+  box-sizing: border-box;
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
+  color: #61dafb;
+  min-height: 100vh;
+  position: relative;
+  align-items: center;
   flex-direction: column;
+  justify-content: center;
+  background-color: #282c34;
+  font-size: calc(10px + 2vmin);
+}
+
+.grid-container {
+  gap: 10px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid-item {
+  padding: 20px;
+  font-size: 30px;
+  text-align: left;
+  color: #9e9e9e;
+  background-color: #20232a;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+h2{
+  margin: 0;
+  font-size: 1em;
+  margin-bottom: 1rem;
+}
+h3{
+  margin: 0;
+  font-size: 0.7em;
+  margin-bottom: 1rem;
+}
+p{
+  margin: 0;
+  font-size: 0.5em;
+  margin-bottom: 1rem;
+}
+.btn-delete{
+  border: 0;
+  width: 100%;
+  padding: 1rem;
+  display: block;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  transition: all ease .4s;
+  text-transform: uppercase;
+  background-color: #d13d3d;
+}
+.btn-delete:hover{
+  background-color: rgb(209, 61, 61, 0.6);
+}
+
+.btn-add{
+  border: 0;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+  transition: all ease .4s;
+  text-transform: uppercase;
+  background-color: rgb(37, 179, 79);
+}
+.btn-add:hover{
+  background-color:rgb(37, 179, 79, 0.6);
+}
+
+.app-modal{
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.app-modal-content{
+  width: 400px;
+  padding: 3rem;
+  position: relative;
+  height: fit-content;
+  background-color: #282c34;
+}
+
+.app-modal label{
+  display: block;
+  font-size: 0.6em;
+  color: #cccccc;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.form-control{
+  width: 100%;
+  height: 40px;
+  resize: none;
+  display: block;
+  padding: 0.5rem;
+  color: #9e9e9e;
+  margin-bottom: 1rem;
+  background-color: #20232a;
+  border: 1px solid #16181d;
+}
+
+textarea.form-control{
+  height: 80px;
+}
+
+.app-modal .btn-add{
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+
+.app-modal .btn-delete{
+  border: 0;
+  top: -20px;
+  right: -20px;
+  padding: 0;
+  width: 40px;
+  height: 40px;
   color: white;
+  position: absolute;
+  border-radius: 100px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-modal p{
+  text-align: center;
+  color: red;
+  margin: 0.5rem 0 0;
 }
